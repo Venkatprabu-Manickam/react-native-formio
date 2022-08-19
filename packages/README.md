@@ -4,7 +4,8 @@ A React Native Library for formio specifically developed to support with Form de
 
 
 ## Prerequisites
-yarn add rn-fetch-blob yarn add react-native-device-info
+yarn add rn-fetch-blob.  
+yarn add react-native-device-info. 
 
 
 
@@ -16,7 +17,7 @@ npm i react-native-formio-renderer
 yarn add react-native-formio-renderer
 
 ### iOS
-cd ios pod install
+...cd ios & pod install
 
 
 ## Props
@@ -78,5 +79,16 @@ options={
 }
 ```
 
+### Usage
+
+```javascript
+import { Formio } from 'react-native-formio-renderer';
+
+ <Formio 
+   form = {{components : FormInputJSON.components}}/>
+   
+``` 
+   
+
 ## License
-Released under the ISC
+Released under the [MIT License](http://www.opensource.org/licenses/MIT).
