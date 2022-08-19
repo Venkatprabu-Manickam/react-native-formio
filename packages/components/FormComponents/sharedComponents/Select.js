@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import Icon from "react-native-vector-icons/dist/FontAwesome";
-import { Dropdown } from "react-native-material-dropdown-v2";
+import { Dropdown } from "react-native-material-dropdown-v2-fixed";
 import MultiSelect from "react-native-multiple-select";
 import { FormLabel, FormInput } from "react-native-elements";
 import get from "lodash/get";

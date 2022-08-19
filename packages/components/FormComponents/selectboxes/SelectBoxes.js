@@ -5,7 +5,7 @@ import ValueComponent from '../sharedComponents/Value';
 import DeviceInfo from 'react-native-device-info';
 import Tooltip from '../sharedComponents/Tooltip';
 
-export default class SelectBox extends ValueComponent {
+export default class SelectBoxes extends ValueComponent {
   constructor(props) {
     super(props);
 

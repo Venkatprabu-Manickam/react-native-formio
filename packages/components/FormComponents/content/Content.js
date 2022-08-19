@@ -11,7 +11,7 @@ export default class Content extends BaseComponent {
     super(props);
     this.onLinkPress = this.onLinkPress.bind(this);
     this.getHtmlStyles = this.getHtmlStyles.bind(this);
-    this.width = useWindowDimensions();
+    this.width = Dimensions.get('screen').width;
   }
 
   getHtmlStyles() {
