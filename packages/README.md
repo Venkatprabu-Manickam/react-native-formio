@@ -4,8 +4,7 @@ A React Native Library for formio specifically developed to support with Form de
 
 
 ## Prerequisites
-yarn add rn-fetch-blob__
-yarn add react-native-device-info__
+yarn add rn-fetch-blob yarn add react-native-device-info
 
 
 
@@ -17,8 +16,7 @@ npm i react-native-formio-renderer
 yarn add react-native-formio-renderer
 
 ### iOS
-cd ios__
-pod install
+cd ios pod install
 
 
 ## Props
