@@ -60,10 +60,6 @@
     "metro-react-native-babel-preset": "^0.70.3",
     "react-test-renderer": "18.0.0"
   },
-  "peerDependencies": {
-    "react": "^16.2.0",
-    "react-native": "*"
-  },
   "jest": {
     "preset": "react-native"
   }
