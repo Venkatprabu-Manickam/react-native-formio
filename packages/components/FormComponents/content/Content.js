@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Linking,useWindowDimensions } from 'react-native';
+import { View, Linking,useWindowDimensions, Dimensions } from 'react-native';
 import { StyleSheet } from 'react-native';
 import RenderHtml from 'react-native-render-html';
 import BaseComponent from '../sharedComponents/Base';

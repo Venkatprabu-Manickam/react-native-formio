@@ -1,6 +1,6 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
-import {CheckBox, FormLabel} from 'react-native-elements';
+import { View, StyleSheet, Text } from 'react-native';
+import { CheckBox, FormLabel } from 'react-native-elements';
 import ValueComponent from '../sharedComponents/Value';
 import DeviceInfo from 'react-native-device-info';
 import Tooltip from '../sharedComponents/Tooltip';
@@ -35,7 +35,7 @@ export default class SelectBoxes extends ValueComponent {
   elementLayout(position) {
     switch (position) {
       case 'top':
-       return {
+        return {
           flexDirection: 'column',
         };
       case 'left-left':
@@ -62,7 +62,7 @@ export default class SelectBoxes extends ValueComponent {
   }
 
   selectBoxes() {
-   const {component} = this.props;
+    const { component } = this.props;
     const boxesStyles = StyleSheet.create({
       boxesWrapper: {
         flex: 1,
@@ -80,8 +80,8 @@ export default class SelectBoxes extends ValueComponent {
       }
     });
 
-   return (
-     <View style={boxesStyles.boxesWrapper}>
+    return (
+      <View style={boxesStyles.boxesWrapper}>
         {component.values.map(item => {
           const selectedItems = this.state.value && this.state.value.item ? this.state.value.item : [];
           const isSelected = Object.keys(selectedItems).find((i) => i === item.value);
@@ -90,25 +90,25 @@ export default class SelectBoxes extends ValueComponent {
 
           return (
             <CheckBox
-            key={item.label}
-            title={item.label}
-            checkedIcon='check-square'
-            uncheckedIcon='square-o'
-            containerStyle={boxesStyles.checkbox}
-            size={26}
-            iconRight={component.optionsLabelPosition === 'left'}
-            checkedColor={this.props.colors.primary1Color}
-            uncheckedColor={this.props.colors.primary1Color}
-            checked={isChecked}
-            onIconPress={onSelect}
-          />);
+              key={item.label}
+              title={item.label}
+              checkedIcon='check-square'
+              uncheckedIcon='square-o'
+              containerStyle={boxesStyles.checkbox}
+              size={26}
+              iconRight={component.optionsLabelPosition === 'left'}
+              checkedColor={this.props.colors.primary1Color}
+              uncheckedColor={this.props.colors.primary1Color}
+              checked={isChecked}
+              onIconPress={onSelect}
+            />);
         })}
-     </View>
-   );
+      </View>
+    );
   }
 
   getElements() {
-    const {component} = this.props;
+    const { component } = this.props;
     const selectBoxStyle = StyleSheet.create({
       wrapper: {
         flex: 1,
@@ -135,25 +135,26 @@ export default class SelectBoxes extends ValueComponent {
       },
     });
 
-    const inputLabel = (
-    <FormLabel labelStyle={selectBoxStyle.label}>
-      {component.label && !component.hideLabel ? component.label  : ''}
-    </FormLabel>);
+   /* const inputLabel = (
+      <FormLabel labelStyle={selectBoxStyle.label}>
+        {component.label && !component.hideLabel ? component.label : ''}
+      </FormLabel>);
 
     const requiredInline = (<Text>
-      {!component.label && component.validate && component.validate.required ? '*': ''}
-    </Text>);
+      {!component.label && component.validate && component.validate.required ? '*' : ''}
+    </Text>); */
 
     return (
       <View style={selectBoxStyle.wrapper}>
-         <View style={selectBoxStyle.mainElement}>
+        <View style={selectBoxStyle.mainElement}>
           <View style={selectBoxStyle.labelWrapper}>
-          {inputLabel} {requiredInline}
-          {component.tooltip && <Tooltip
-            text={component.tooltip}
-            color={this.props.colors.alternateTextColor}
-            backgroundColor={this.props.colors.primary1Color}
-          />}
+            <Text style={selectBoxStyle.label}>{component.label && !component.hideLabel ? component.label : ''}</Text>
+            <Text>{!component.label && component.validate && component.validate.required ? '*' : ''}</Text>
+            {component.tooltip && <Tooltip
+              text={component.tooltip}
+              color={this.props.colors.alternateTextColor}
+              backgroundColor={this.props.colors.primary1Color}
+            />}
           </View>
           {this.selectBoxes()}
         </View>
